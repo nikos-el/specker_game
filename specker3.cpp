@@ -21,6 +21,7 @@ class Game {
       count_p++;  
     }  
     void play(std::ostream &out) throw(std::logic_error){  
+      if (h!=h_count || p!=p_count) throw std::logic_error("invalid game");
       State s(h, heaps);  
       int i=0;  
       while (!s.winning()){  
